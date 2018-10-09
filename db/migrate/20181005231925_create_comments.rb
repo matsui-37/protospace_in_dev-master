@@ -4,7 +4,7 @@ class CreateComments < ActiveRecord::Migration
       t.integer :user_id
       t.integer :prototype_id
       t.integer :captured_image_id
-      t.text :text
+      t.text    :text
       t.timestamps
     end
   end
