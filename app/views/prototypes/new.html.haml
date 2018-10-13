@@ -12,7 +12,11 @@
           %h4 Main Thumbnail
           .cover-image-upload#main_image_uploader
             = f.fields_for :captured_images do |image|
-              %img
+              %form
+                %input{type: "file"}/
+              .preview
+              / %input#prototype_captured_images_attributes_0_content{required: "required", type: "file", name: "prototype[captured_images_attributes][0][content]"}/
+              / %img#preview/
               = image.file_field :content, required: true
               = image.hidden_field :status, value: "main"
         .col-md-12
@@ -22,7 +26,9 @@
               %li.list-group-item.col-md-4
                 .image-upload
                   = f.fields_for :captured_images do |image|
-                    %img
+                    %form
+                      %input{type: "file"}/
+                    .preview1
                     = image.file_field :content
                     = image.hidden_field :status, value: "sub"
       .row.proto-description
@@ -34,3 +40,6 @@
           = f.text_area :concept, require: true, placeholder: "Input Concept"
       .row.text-center.proto-btn
         = f.submit "PUBLISH", id: "button", class: "btn btn-lg btn-primary btn-block"
+
+
+

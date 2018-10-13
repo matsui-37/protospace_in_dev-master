@@ -430,6 +430,10 @@ body {
       filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
       cursor: pointer;
     }
+    .preview {
+    text-align: center;
+    line-height: 500px;
+    }
   }
 
   .list-group-item {
@@ -452,6 +456,10 @@ body {
         filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
         cursor: pointer;
       }
+    }
+      .preview1 {
+        text-align: center;
+        line-height: 200px;
     }
 
     .image-upload-plus {
