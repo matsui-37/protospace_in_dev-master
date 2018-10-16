@@ -430,6 +430,16 @@ body {
       filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
       cursor: pointer;
     }
+    .m-preview {
+      max-height: 100%;
+      max-width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+    }
   }
 
   .list-group-item {
@@ -440,6 +450,20 @@ body {
       background: image-url("noimage.png") #fff no-repeat center center;
       height: 200px;
       position: relative;
+      .s-preview {
+        max-height: 100%;
+        // height: 200px;にすると枠線が出て消えなくなるので注意
+        line-height: 200px;
+        max-width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+      }
+
+
 
       input {
         position: absolute;
