@@ -12,7 +12,10 @@
           %h4 Main Thumbnail
           .cover-image-upload#main_image_uploader
             = f.fields_for :captured_images do |image|
-              %img
+              %img.m-preview
+              / %form
+              /   %input{type: "file"}/
+              / .preview
               = image.file_field :content, required: true
               = image.hidden_field :status, value: "main"
         .col-md-12
@@ -20,9 +23,12 @@
           %ul.proto-sub-list.list-group
             - 3.times do |i|
               %li.list-group-item.col-md-4
-                .image-upload
+                .image-upload.sub_image_uploader
                   = f.fields_for :captured_images do |image|
-                    %img
+                    %img.s-preview
+                    / %form
+                    /   %input{type: "file"}/
+                    / .preview1
                     = image.file_field :content
                     = image.hidden_field :status, value: "sub"
       .row.proto-description
@@ -34,3 +40,6 @@
           = f.text_area :concept, require: true, placeholder: "Input Concept"
       .row.text-center.proto-btn
         = f.submit "PUBLISH", id: "button", class: "btn btn-lg btn-primary btn-block"
+
+
+

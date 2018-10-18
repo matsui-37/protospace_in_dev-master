@@ -7,3 +7,10 @@ class CreateCapturedImages < ActiveRecord::Migration
     end
   end
 end
+
+
+
+
+
+
+

@@ -35,6 +35,15 @@
       %h4 Concept
       %p
         = @prototype.concept
+    .col-md-6
+      %h4 Comment
+      = form_for [@prototype, @comment] do |form|
+        = form.text_field :text
+        = form.submit "sent"
+      %h4 Comments
+      - @comments.each do |comment|
+        %p= comment.text
+
     .col-md-3
       %h4 Tag List
       %ul.proto-tag-list.list-inline
