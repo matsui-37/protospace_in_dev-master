@@ -26,6 +26,11 @@ class PrototypesController < ApplicationController
     @comments  = Comment.order("created_at DESC").limit(5)
   end
 
+  def destroy
+    prototype = Prototype.destroy(params[:id])
+    prototype.destroy if prototype.user_id == current_user.id
+  end
+
   private
 
   def set_prototype
